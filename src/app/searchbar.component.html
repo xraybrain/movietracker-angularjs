@@ -1,0 +1,16 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-11 col-md-8 mx-auto">
+      <div class="input-group">
+
+        <!-- @Todo implement for enter key -->
+        <input type="search" class="form-control" [(ngModel)]="movieTitle"  placeholder="Search: movie title"/>
+        <div class="input-group-btn">
+          <button class="btn btn-warning" (click)="handleSearch()">
+            SEARCH
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

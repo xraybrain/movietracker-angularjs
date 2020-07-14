@@ -1,0 +1,60 @@
+<a href="javascript: void()" (click)="openModalWithClass(template)">
+  <div class="thumbnail">
+    <div class="caption">
+      <img [src]="movie.poster_path" alt="movie image" class="thumbnail-img" />
+      <h5 class="thumbnail-title text-center">{{movie.title}}</h5>
+      <p class="text-center">
+        ratings(<fa name="star text-warning"></fa>)
+        :
+        {{movie.vote_average}}
+      </p>
+    </div>
+  </div>
+</a>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">
+      Movie ({{movie.title}})
+    </h4>
+    <button type="button" class="close pull-right" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="text-center">
+      <img [src]="movie.poster_path" alt="movie poster" style="height: 300px; width: 350px;" class="img-rounded" />
+    </div>
+    <h4 class="text-center">
+      <fa name="film text-danger"></fa>
+      {{movie.title}}
+    </h4>
+
+    <div class="panel well">
+      <div class="panel-header">
+        <h2 class="panel-title">
+          <fa name="comment text-danger"></fa>
+          Description
+        </h2>
+      </div>
+      <div class="panel-body text-center">
+        {{movie.overview}}
+      </div>
+    </div>
+
+    <div class="panel well">
+      <div class="panel-header">
+        <h2 class="panel-title">
+          <fa name="calendar text-danger"></fa>
+          Release date:
+          {{movie.release_date}}
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-danger" (click)="modalRef.hide()">
+      close
+    </button>
+  </div>
+</ng-template>

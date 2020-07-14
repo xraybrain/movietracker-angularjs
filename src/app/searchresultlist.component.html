@@ -1,0 +1,15 @@
+<div class="container my-2">
+  <div class="panel panel-widget">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-11 col-sm-6 col-md-4 col-lg-3 p-2 mx-xs-auto" *ngFor="let movie of movies">
+          <!-- SearchResultItem Component-->
+          <search-result-item [movie]="movie"></search-result-item>
+          <!-- End of SearchResultItem Component-->
+        </div>
+      </div>
+
+      <p *ngIf="isSearching" class="text-white text-center">Searching...</p>
+    </div>
+  </div>
+</div>
